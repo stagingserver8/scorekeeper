@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+    margin: 0;
+    padding: 1em;
+}
+
+label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+button {
+    margin-left: 10px;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 500px;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+th {
+    text-align: center;
+    background-color: #ccc;
+}
+
+td {
+    text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+    table {
+        margin: 20px;
+    }
+}
