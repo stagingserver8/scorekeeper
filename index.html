@@ -96,14 +96,17 @@ th {
 <body>
     <div class="container">
         <h1>Hole <span id="holeNumber">1</span></h1>
-        <div>
-            <label for="michaelScore">Michael: </label>
-            <input type="number" id="michaelScore" min="1">
-        </div>
+        
         <div>
             <label for="zhenyaScore">Zhenya: </label>
             <input type="number" id="zhenyaScore" min="1">
         </div>
+        
+        <div>
+            <label for="michaelScore">Michael: </label>
+            <input type="number" id="michaelScore" min="1">
+        </div>
+        
         <div>
             <button id="previousHole" onclick="previousHole()" disabled>Previous Hole</button>
             <button id="nextHole" onclick="nextHole()">Next Hole</button>
@@ -115,8 +118,9 @@ th {
                 <thead>
                     <tr>
                         <th>Hole</th>
-                        <th>Michael</th>
                         <th>Zhenya</th>
+                        <th>Michael</th>
+                        
                     </tr>
                 </thead>
                 <tbody>
