@@ -2,19 +2,129 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Golf Scorecard</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golf Scoring App</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+}
+
+input[type="number"] {
+    font-size: 1.5rem;
+    width: 100%;
+    max-width: 200px;
+    height: 2em;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+}
+
+button {
+    font-size: 1.5rem;
+    padding: 0.5em 1em;
+    margin: 0.5em;
+    width: 100%;
+    max-width: 200px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+}
+
+th, td {
+    text-align: center;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+}
+
+th {
+    font-weight: bold;
+    background-color: #f2f2f2;
+}
+
+
+#results {
+    margin-top: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    label {
+        font-size: 2rem;
+    }
+
+    input[type="number"] {
+        font-size: 2rem;
+    }
+
+    button {
+        font-size: 2rem;
+    }
+}
+        
+    </style>
 </head>
 <body>
-    <h1>Golf Scorecard</h1>
-    <label for="holeNumber">Select the number of holes:</label>
-    <select id="holeNumber">
-        <option value="9">9 Holes</option>
-        <option value="18">18 Holes</option>
-    </select>
-    <button onclick="startGame()">Start Game</button>
-
-    <div id="scorecard"></div>
-    <script src="code.js"></script>
+    <div class="container">
+        <h1>Hole <span id="holeNumber">1</span></h1>
+        <div>
+            <label for="michaelScore">Michael: </label>
+            <input type="number" id="michaelScore" min="1">
+        </div>
+        <div>
+            <label for="zhenyaScore">Zhenya: </label>
+            <input type="number" id="zhenyaScore" min="1">
+        </div>
+        <div>
+            <button id="previousHole" onclick="previousHole()" disabled>Previous Hole</button>
+            <button id="nextHole" onclick="nextHole()">Next Hole</button>
+            <button id="finishRound" onclick="finishRound()" style="display:none">Finish Round</button>
+        </div>
+        <div id="results" style="display:none">
+            <h2>Results</h2>
+            <table id="scoreDetails">
+                <thead>
+                    <tr>
+                        <th>Hole</th>
+                        <th>Michael</th>
+                        <th>Zhenya</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <div>Total: <br> Michael: <span id="totalMichael"></span>, <br> Zhenya: <span id="totalZhenya"></span></div>
+        </div>
+    </div>
+	<script src="code.js"></script>
 </body>
 </html>
