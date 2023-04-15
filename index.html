@@ -6,15 +6,15 @@
     <title>Golf Scoring App</title>
     <style>
         body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-    padding: 1rem;
-    box-sizing: border-box;
+                font-family: Arial, sans-serif;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                margin: 0;
+                padding: 1rem;
+                box-sizing: border-box;
 }
 
 .container {
@@ -41,6 +41,7 @@ input[type="number"] {
     height: 2em;
     padding: 0.5em;
     border: 1px solid #ccc;
+    text-align: center;
 }
 
 button {
@@ -66,6 +67,25 @@ th, td {
 th {
     font-weight: bold;
     background-color: #f2f2f2;
+}
+.score-inputs {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: nowrap;
+    margin-bottom: 1rem;
+}
+
+.score-inputs div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+label {
+    margin: 0;
 }
 
 
@@ -95,21 +115,28 @@ th {
 </head>
 <body>
     <div class="container">
-        <h1>Hole <span id="holeNumber">1</span></h1>
+        <h1>Hole <span id="holeNumber">1</span>     ⛳</h1>
+        <br>
+        <br>
         
-        <div>
-            <label for="zhenyaScore">Zhenya: </label>
-            <input type="number" id="zhenyaScore" min="1">
+
+        <div class="score-inputs">
+            <div>
+                <label for="zhenyaScore">Zhenya: </label>
+                <br>
+                <input type="number" id="zhenyaScore" min="1">
+            </div>
+            <div>
+                <label for="michaelScore">Michael: <br> </label>
+                <br>
+                <input type="number" id="michaelScore" min="1">
+            </div>
         </div>
+        <br>
         
         <div>
-            <label for="michaelScore">Michael: </label>
-            <input type="number" id="michaelScore" min="1">
-        </div>
-        
-        <div>
-            <button id="previousHole" onclick="previousHole()" disabled>Previous Hole</button>
-            <button id="nextHole" onclick="nextHole()">Next Hole</button>
+            <button id="previousHole" onclick="previousHole()" disabled> <--- Previous Hole</button>
+            <button id="nextHole" onclick="nextHole()">Next Hole ---> </button>
             <button id="finishRound" onclick="finishRound()" style="display:none">Finish Round</button>
         </div>
         <div id="results" style="display:none">
